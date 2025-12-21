@@ -1,0 +1,1447 @@
+/* Projects-specific styles (inverted boxed title) */
+/* Fade-up utility for reveal animations */
+/* New animation utilities: fade-down (titles), fade-right (achievements carousel), fade-left (certifications carousel) */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.viewer-bullets li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.viewer-bullets {
+  list-style: disc;
+  margin: 12px 0 0 18px;
+  padding: 0;
+}
+
+/* Tag chips below the bullets: transparent background, black border */
+.viewer-tags {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.viewer-tag {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid #000;
+  background: transparent;
+  color: #000;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .viewer-bullets li {
+    font-size: 14px;
+  }
+  .viewer-tag {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .viewer-bullets li {
+    font-size: 13px;
+  }
+  .viewer-tag {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+}
+/* Projects-specific styles (inverted boxed title) */
+.skills-title--inverted {
+  background: #000;
+  color: #fff;
+  border: 3px solid #fff;
+  padding: 16px 44px;
+  font-weight: 800;
+  letter-spacing: 6px;
+  font-size: 28px;
+  width: max-content;
+  margin: 0 auto 28px;
+  text-align: center;
+  position: relative;
+  z-index: 4;
+}
+
+/* Fade-up utility for reveal animations */
+.fade-up {
+  transform: translateY(18px);
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: transform 0.56s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.48s ease;
+}
+.fade-up.in-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* New animation utilities: fade-down (titles), fade-right (achievements carousel), fade-left (certifications carousel) */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.fade-down {
+  opacity: 0;
+  transform: translateY(-16px);
+  will-change: transform, opacity;
+  transition: transform 5s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.48s ease;
+}
+.fade-down.in-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(-22px);
+  will-change: transform, opacity;
+  transition: transform 5s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.48s ease;
+}
+.fade-right.in-view {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.fade-left {
+  opacity: 0;
+  transform: translateX(22px);
+  will-change: transform, opacity;
+  transition: transform 5s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.48s ease;
+}
+.fade-left.in-view {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Cascade/stagger override for project tabs */
+.projects-tabs .tab.fade-up {
+  transform: translateY(12px);
+  opacity: 0;
+  transition: transform 0.36s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.28s ease;
+}
+.projects-tabs .tab.fade-up.in-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .skills-title--inverted {
+    font-size: 22px;
+    padding: 12px 30px;
+  }
+}
+@media (max-width: 480px) {
+  .skills-title--inverted {
+    font-size: 20px;
+    padding: 10px 24px;
+  }
+}
+
+/* Projects gallery styles */
+.projects-controls {
+  margin-bottom: 0;
+}
+
+/* full-bleed container for the More / Show less button */
+.more-wrap {
+  background: #38a793;
+  color: #000;
+  padding: 12px 14px;
+  width: 100vw;
+  box-sizing: border-box;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  display: flex;
+  justify-content: center;
+}
+.more-wrap .projects-more-row {
+  margin: 0;
+}
+/* style the button inside the full-bleed container to match the pill appearance */
+.more-wrap .btn-more {
+  padding: 10px 20px;
+  border-radius: 0px;
+  border: 3px solid #000000; /* white outlined pill on the green band */
+  background: transparent;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 800;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+/* message state for the More button when there are no extra items */
+.more-wrap .btn-more.message {
+  background: transparent;
+  border: none;
+  color: #000;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: default;
+  padding: 6px 12px;
+}
+.tabs-wrap {
+  background: #38a793;
+  color: #000;
+  padding: 10px 14px;
+  padding-left: 70px;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  box-sizing: border-box;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+.tabs-wrap .projects-tabs {
+  display: flex;
+  gap: 64px; /* increased gap to prevent indicator overlap */
+  justify-content: center;
+}
+.projects-tabs {
+  position: relative; /* for indicator positioning */
+  display: flex;
+  gap: 64px; /* match wrapper gap to ensure consistent spacing */
+  justify-content: center;
+  padding-bottom: 12px; /* space for underline/indicator */
+  width: max-content;
+  margin: 0 auto;
+}
+
+/* give room on both sides so the fixed indicator can center under edge labels */
+.projects-tabs {
+  padding-left: 64px; /* left offset for indicator room */
+  padding-right: 64px; /* right offset for symmetry */
+}
+
+/* full-width underline spanning the tabs area (track) */
+.projects-tabs::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.12); /* subtle track color visible on green */
+  border-radius: 2px;
+}
+
+.projects-tabs .tab {
+  background: transparent;
+  border: none;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-weight: 800;
+  color: #000;
+  font-size: 14px; /* header-like but smaller */
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* moving darker indicator */
+.projects-tabs .tab-indicator {
+  position: absolute;
+  bottom: 6px;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 2px;
+  left: 0;
+  transition: left 0.3s ease, width 0.3s ease;
+  will-change: left, width;
+  width: 120px; /* default fixed indicator width */
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* 2 columns for desktop to show a 2x2 layout */
+  gap: 0; /* no gaps - compact tiles */
+  align-items: stretch;
+  width: 100vw; /* full-bleed grid */
+  box-sizing: border-box;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+/* remove any top gap between controls (tabs) and the grid */
+.projects-controls + .projects-grid {
+  margin-top: 0;
+}
+/* Ensure gallery appears above the fixed hero background */
+.projects-gallery {
+  position: relative;
+  z-index: 2;
+}
+.project-item {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  text-align: left;
+  overflow: hidden;
+}
+.project-item.hidden {
+  display: none !important;
+}
+/* Fade-in/stagger for project tiles */
+.project-item.fade-in {
+  transform: translateY(14px);
+  opacity: 0;
+  transition: transform 0.44s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.36s ease;
+  will-change: transform, opacity;
+}
+.project-item.fade-in.in-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+.project-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/1; /* force square tiles */
+  overflow: hidden;
+}
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease; /* zoom transition */
+}
+.project-thumb:hover img {
+  transform: scale(1.06);
+}
+
+/* remove any borders or outlines on images and items */
+.projects-grid .project-item,
+.projects-grid .project-thumb,
+.projects-grid .project-thumb img {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* reset container padding for projects area so grid sits flush under tabs */
+.projects-gallery .container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* hide thumbnails meta in the compact grid to match visual reference */
+.projects-grid .project-type {
+  display: none;
+}
+
+/* Thumbnail overlay: black gradient on hover, title centered */
+.project-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/1; /* force square tiles */
+  overflow: hidden;
+  position: relative; /* for overlay and centered title */
+}
+.project-thumb::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.04) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+.project-thumb .project-meta {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: 800;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 0 8px;
+  letter-spacing: 1px;
+  text-transform: none;
+  font-size: 16px;
+}
+.project-thumb:hover::before,
+.project-thumb:focus::before,
+.project-thumb:focus-visible::before {
+  opacity: 1;
+}
+.project-thumb:hover .project-meta,
+.project-thumb:focus .project-meta,
+.project-thumb:focus-visible .project-meta {
+  opacity: 1;
+}
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease; /* zoom transition */
+  position: relative;
+  z-index: 1;
+}
+.project-thumb:hover img {
+  transform: scale(1.06);
+}
+
+/* make sure title appears above overlay and add text-shadow for contrast */
+.project-thumb .project-meta {
+  z-index: 3;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.65);
+  font-size: 18px;
+  transition: opacity 0.3s ease, font-size 0.18s ease;
+}
+
+/* Enlarge the title text when the tile is hovered or focused */
+.project-thumb:hover .project-meta,
+.project-thumb:focus .project-meta,
+.project-thumb:focus-visible .project-meta {
+  opacity: 1; /* ensure visible */
+  font-size: 22px; /* larger on hover */
+  transition: opacity 0.3s ease, font-size 0.18s ease;
+}
+
+/* Viewer overlay */
+.project-viewer {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.24s ease;
+}
+.project-viewer.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.viewer-inner {
+  background: #fff;
+  color: #000;
+  width: min(1000px, 95%);
+  max-height: 86vh;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  padding: 18px;
+  padding-bottom: 64px; /* leave room for the bottom-right action button */
+  border-radius: 6px;
+  position: relative; /* so the close button is positioned relative to the inner container */
+}
+.viewer-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+.viewer-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.viewer-info {
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* start from the top */
+  align-items: flex-start;
+  gap: 8px;
+}
+.viewer-demo {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 8px 14px;
+  border-radius: 26px;
+  background: #38a793;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 6;
+  min-width: 140px;
+  text-align: center;
+}
+
+/* disabled demo state when no demo link is provided */
+.viewer-demo.disabled,
+.viewer-demo[aria-disabled="true"] {
+  background: transparent;
+  color: #666;
+  border: 2px solid #ddd;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.viewer-title {
+  margin: 0; /* ensure title starts at top */
+}
+.viewer-desc {
+  margin: 0; /* description sits just under title */
+}
+
+/* image-only viewer mode: hide info column and make media full-width */
+.project-viewer.image-only .viewer-inner {
+  grid-template-columns: 1fr !important;
+}
+.project-viewer.image-only .viewer-info {
+  display: none !important;
+}
+.project-viewer.image-only .viewer-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* inner container inside the viewer media to create nested container structure */
+.viewer-media-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: transparent;
+  padding: 6px; /* subtle padding around the image inside the inner container */
+}
+.viewer-media-inner img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix viewer container size so images don't resize the modal.
+   The viewer-media area has a fixed maximum height; images are scaled
+   inside using object-fit:contain so their intrinsic size won't expand
+   the surrounding `.viewer-inner`. Responsive breakpoints reduce the
+   viewer height on tablets and phones. */
+.viewer-inner {
+  /* keep an overall cap for viewer height (desktop) */
+  max-height: 80vh;
+}
+.viewer-media {
+  position: relative; /* existing positioning preserved */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* fixed visual area for the image so it doesn't stretch the modal */
+  height: min(68vh, 520px);
+  overflow: hidden; /* hide any overflow from very large images */
+}
+.viewer-media-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 6px; /* keep subtle padding inside the fixed area */
+  box-sizing: border-box;
+}
+.viewer-media-inner img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Ensure nav buttons sit inside the fixed media area without affecting layout */
+.viewer-nav {
+  pointer-events: auto; /* clickable while container intercepts overlay clicks */
+}
+
+@media (max-width: 768px) {
+  .viewer-media {
+    height: min(56vh, 420px);
+  }
+}
+
+@media (max-width: 600px) {
+  .viewer-media {
+    height: min(50vh, 360px);
+  }
+  .viewer-inner {
+    max-height: 76vh; /* keep a slightly smaller cap on small phones */
+  }
+}
+
+/* viewer navigation buttons (left / right) */
+.viewer-media {
+  position: relative; /* ensure nav buttons can be positioned over the image */
+}
+.viewer-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.46);
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 6;
+  transition: background 0.18s ease, transform 0.12s ease;
+}
+.viewer-nav:hover {
+  background: rgba(0, 0, 0, 0.64);
+  transform: translateY(-50%) scale(1.04);
+}
+.viewer-nav:active {
+  transform: translateY(-50%) scale(0.98);
+}
+.viewer-nav.viewer-nav--prev {
+  left: 12px;
+}
+.viewer-nav.viewer-nav--next {
+  right: 12px;
+}
+
+@media (max-width: 600px) {
+  .viewer-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+  .viewer-nav.viewer-nav--prev {
+    left: 8px;
+  }
+  .viewer-nav.viewer-nav--next {
+    right: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs-wrap {
+    overflow-x: auto;
+    padding: 6px 8px;
+    padding-left: 45px;
+  }
+  /* keep tabs centered on tablet/smaller screens and reduce gap */
+  .projects-tabs {
+    justify-content: center;
+    gap: 40px;
+    padding-left: 40px; /* preserve left offset for indicator room */
+    padding-right: 40px;
+  }
+  .viewer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  /* on tablet/smaller screens make the Open Project button flow below details */
+  .viewer-demo {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    margin-top: 12px;
+    align-self: end;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Phone: stacked single column (1 column x 2 rows visible by JS) */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .viewer-inner {
+    grid-template-columns: 1fr;
+  }
+  /* smaller gaps and smaller indicator on phones */
+  .tabs-wrap .projects-tabs {
+    gap: 28px;
+  }
+  .projects-tabs {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .projects-tabs .tab-indicator {
+    width: 80px; /* mobile indicator width fallback */
+  }
+}
+
+/* Achievements / Certifications styles */
+.achievements-section {
+  padding: 48px 0 120px; /* increased bottom padding for desktop/tablet spacing */
+  position: relative;
+}
+.achievements-title--hero {
+  /* reuse boxed title but make background match page (transparent) */
+  background: transparent;
+  color: #000;
+  border: 3px solid #000;
+  padding: 14px 40px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  font-size: 14px;
+  width: max-content;
+  margin: 0 auto 24px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  z-index: 4;
+}
+.achievements-wrapper {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+/* Add spacing below the achievements carousel so it has room from following content */
+.achievements-wrapper[data-name="achievements"] {
+  margin-bottom: 100px;
+}
+.achievements-grid {
+  display: grid;
+  /* Desktop default: 4 columns */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  /* stretch child cards so they all match height */
+  align-items: stretch;
+}
+.achievement-card {
+  background: #38a793;
+  color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* smooth lift effect on hover (no shadows) */
+  transition: transform 260ms ease;
+  will-change: transform;
+}
+.achievement-card .card-media {
+  /* fluid image height: scales with viewport but stays within bounds */
+  height: clamp(120px, 12vw, 180px);
+  overflow: hidden;
+}
+.achievement-card .card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.achievement-card .card-body {
+  padding: 12px 14px;
+}
+.achievement-card .card-title {
+  margin: 0 0 6px;
+  font-size: clamp(14px, 1.1vw, 16px);
+}
+.achievement-card .card-desc {
+  margin: 0;
+  color: #000;
+  font-size: clamp(12px, 0.9vw, 14px);
+}
+
+/* make achievement/cert cards clearly clickable */
+.achievement-card {
+  cursor: pointer;
+}
+
+/* subtle hover lift (no shadow) */
+.achievement-card:hover,
+.achievement-card:focus-within {
+  transform: translateY(-8px);
+}
+
+/* Certifications-specific: show as horizontal carousel with 4 visible cards on desktop/tablet */
+.certs-wrapper .achievements-grid {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  align-items: stretch; /* ensure carousel cards match height */
+}
+
+/* hide visible scrollbar for certifications carousel (all platforms)
+   keep scrolling available for JS controls and touch swipe */
+.certs-wrapper .achievements-grid::-webkit-scrollbar {
+  height: 0;
+  display: none;
+}
+.certs-wrapper .achievements-grid {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Achievements: reuse certifications carousel pattern but show 3 per view */
+.achievements-wrapper[data-name="achievements"] .achievements-grid {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  align-items: stretch; /* ensure achievement carousel cards match height */
+}
+.achievements-wrapper[data-name="achievements"]
+  .achievements-grid::-webkit-scrollbar {
+  height: 0;
+  display: none;
+}
+.achievements-wrapper[data-name="achievements"] .achievements-grid {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.achievements-wrapper[data-name="achievements"] .achievement-card {
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%;
+  box-sizing: border-box;
+  align-self: stretch;
+  height: 100%;
+}
+.certs-wrapper .achievement-card {
+  flex: 0 0 25%;
+  max-width: 25%;
+  box-sizing: border-box;
+  align-self: stretch;
+  height: 100%;
+}
+
+/* Make cards fill their grid/flex cell so all cards have equal outer height */
+.achievements-grid > .achievement-card,
+.certs-wrapper .achievements-grid > .achievement-card,
+.achievements-wrapper[data-name="achievements"]
+  .achievements-grid
+  > .achievement-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* carousel controls */
+.achieve-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  z-index: 8;
+}
+.achieve-btn.left-btn {
+  left: 8px;
+}
+.achieve-btn.right-btn {
+  right: 8px;
+}
+
+/* reveal buttons on hover of edge cards via JS - keep CSS default hidden */
+
+/* responsive behavior */
+/* Responsive column adjustments for gradual scaling */
+@media (max-width: 1200px) {
+  .achievements-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+@media (max-width: 900px) {
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+@media (max-width: 600px) {
+  /* Mobile: single-card carousel that fills available width */
+  .achievements-grid {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    justify-content: center;
+    padding: 0 8px; /* small side padding so the centered card isn't flush to screen */
+  }
+
+  .achievements-grid::-webkit-scrollbar {
+    height: 0;
+    display: none;
+  }
+  .achievements-grid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .achievement-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: center;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0 12px; /* a little inner horizontal padding */
+  }
+
+  .achievement-card .card-media {
+    height: clamp(140px, 28vw, 220px);
+  }
+
+  /* Make nav buttons visible and large enough on mobile */
+  .achieve-btn {
+    display: flex;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 12;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .achieve-btn.left-btn {
+    left: 8px;
+  }
+  .achieve-btn.right-btn {
+    right: 8px;
+  }
+
+  /* keep card body readable on small screens */
+  .achievement-card .card-body {
+    padding: 12px 8px;
+  }
+  /* On very small screens force cards/containers to be white so
+     the green decorative background (used on larger view) is hidden */
+  .achievements-wrapper,
+  .certs-wrapper,
+  .achievements-grid,
+  .achievements-grid > .achievement-card {
+    background: transparent;
+  }
+
+  .achievements-grid > .achievement-card {
+    background: #ffffff;
+    color: inherit;
+    border-radius: 8px;
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  /* If there is any decorative bottom bar applied via pseudo-elements,
+     make sure it's hidden on small screens */
+  .achievements-wrapper::before,
+  .achievements-wrapper::after,
+  .certs-wrapper::before,
+  .certs-wrapper::after {
+    display: none;
+    content: none;
+  }
+}
+/* Reduce the bottom spacing on small screens so layout stays compact */
+@media (max-width: 600px) {
+  .achievements-wrapper[data-name="achievements"] {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 600px) {
+  /* Mobile: unified single-card behavior */
+  .achievements-grid,
+  .certs-wrapper .achievements-grid,
+  .achievements-wrapper[data-name="achievements"] .achievements-grid {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    justify-content: center;
+    padding: 0 8px;
+  }
+
+  /* hide native scrollbar */
+  .achievements-grid::-webkit-scrollbar,
+  .certs-wrapper .achievements-grid::-webkit-scrollbar {
+    height: 0;
+    display: none;
+  }
+  .achievements-grid,
+  .certs-wrapper .achievements-grid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Force one card per view */
+  .achievements-grid > .achievement-card,
+  .certs-wrapper .achievements-grid > .achievement-card,
+  .achievements-wrapper[data-name="achievements"]
+    .achievements-grid
+    > .achievement-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: center;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0 10px; /* gentle inner padding */
+  }
+
+  .achievement-card .card-media {
+    height: clamp(140px, 28vw, 220px);
+  }
+
+  /* show navigation buttons on mobile */
+  .achieve-btn {
+    display: flex;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 12;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+  .achieve-btn.left-btn {
+    left: 8px;
+  }
+  .achieve-btn.right-btn {
+    right: 8px;
+  }
+
+  .achievement-card .card-body {
+    padding: 12px 8px;
+  }
+}
+
+/* Hide first certificate card on phones (small screens) */
+@media (max-width: 600px) {
+  /* Hide the very first certificate tile on phone to avoid mid-switch placement */
+  .certs-wrapper .achievements-grid > .achievement-card:first-child {
+    display: none !important;
+  }
+  /* Ensure buttons remain visible/above content on small screens */
+  .certs-wrapper .achieve-btn,
+  .achievements-wrapper .achieve-btn {
+    z-index: 14;
+  }
+}
+
+/* Certificate/Achievement Viewer */
+.cert-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.cert-viewer.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cert-viewer-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1;
+}
+
+.cert-viewer-container {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.cert-viewer-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #000;
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  z-index: 3;
+}
+
+.cert-viewer-close:hover {
+  background: #333;
+}
+
+.cert-viewer-content {
+  max-width: 100%;
+  max-height: calc(90vh - 80px);
+  overflow: auto;
+}
+
+.cert-viewer-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .cert-viewer-container {
+    padding: 24px;
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+
+  .cert-viewer-content {
+    max-height: calc(95vh - 48px);
+  }
+}
+
+/* Contact subtext: centered, responsive, visible on all screens */
+.contact-subtext {
+  margin: 20px auto 0 auto;
+  text-align: center;
+  color: #000;
+  font-weight: 600;
+  /* Responsive font size: grows with viewport but clamped for extremes */
+  font-size: clamp(18px, 2.6vw, 28px);
+  max-width: 900px;
+  line-height: 1.4;
+  padding: 0 18px; /* small side padding for very small screens */
+}
+
+@media (max-width: 480px) {
+  .contact-subtext {
+    font-size: clamp(16px, 3.8vw, 20px);
+    margin-top: 12px;
+  }
+}
+
+/* Ensure contact section is visible on larger screens and not overlapped */
+.contact-section {
+  background: transparent;
+  padding: 60px 0 120px; /* increased bottom padding so footer and next content have breathing room */
+}
+.contact-section .container {
+  position: relative;
+  z-index: 6; /* sit above nearby decorative elements */
+}
+.contact-subtext {
+  display: block !important;
+  color: #000 !important;
+}
+
+@media (min-width: 601px) {
+  /* slightly larger desktop spacing */
+  .contact-subtext {
+    font-size: clamp(20px, 1.6vw, 24px);
+  }
+}
+
+/* Contact form styles */
+.contact-form {
+  margin: 18px auto 0 auto;
+  max-width: 760px; /* slightly more compact than before */
+  width: 100%;
+}
+.contact-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px; /* tightened spacing for compactness */
+  align-items: start;
+  margin-bottom: 40px; /* increased vertical spacing between fields */
+}
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.contact-form .form-group.full {
+  grid-column: 1 / -1;
+}
+.contact-form label {
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: 0.6px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 10px 12px; /* slightly reduced padding for a denser form */
+  border: 2px solid #ddd;
+  font-size: 15px;
+  font-family: inherit; /* match site font */
+  resize: vertical;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border-radius: 0; /* remove rounded corners as requested */
+}
+.contact-form textarea {
+  min-height: 120px;
+}
+
+/* Style tweak: make the Name field appear with only left and bottom black borders,
+   hiding the top and right borders for a minimalist look. Targets the #cf-name input. */
+/* Visually-hidden utility for labels kept for accessibility */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Make all contact inputs/textareas display only left + bottom black borders.
+   This gives the minimal look for the entire form. */
+.contact-form input,
+.contact-form textarea {
+  border-top: none !important;
+  border-right: none !important;
+  border-left: 2px solid #000 !important;
+  border-bottom: 2px solid #000 !important;
+  box-shadow: none !important;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: none;
+  border-left-color: #000;
+  border-bottom-color: #000;
+}
+
+/* Add vertical breathing room specifically for the Name input */
+#cf-name {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: block;
+  width: 100%;
+}
+.contact-form .form-actions {
+  display: flex; /* center actions horizontally */
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+.btn-submit {
+  background: #38a793;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.form-status {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Layout adjustments: put email below name and make submit button full-width
+   - The second field in the first form-row (typically email) will span the full row
+   - Ensure form action area spans full width and submit button fills available width */
+.contact-form .form-row:first-of-type .form-group:nth-child(2) {
+  grid-column: 1 / -1;
+}
+
+/* Also make the name field full width so name + email stack and match other inputs */
+.contact-form .form-row:first-of-type .form-group:nth-child(1) {
+  grid-column: 1 / -1;
+}
+
+.contact-form .form-actions {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.contact-form .form-actions .btn-submit {
+  width: auto !important; /* override earlier full-width rule */
+  display: inline-block;
+  box-sizing: content-box;
+  background: #fff !important; /* white background */
+  color: #000 !important; /* black text */
+  padding: 10px 22px !important;
+  border-left: 2px solid #000 !important;
+  border-right: 2px solid #000 !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-radius: 0 !important; /* remove rounded corners */
+  transition: background-color 180ms ease, color 180ms ease,
+    transform 120ms ease;
+}
+
+/* Hover: fill background with brand green and make text white */
+.contact-form .form-actions .btn-submit:hover,
+.contact-form .form-actions .btn-submit:focus {
+  background: #38a793 !important;
+  color: #fff !important;
+  outline: none;
+  transform: translateY(-1px);
+}
+
+/* place status under the button and center text */
+.contact-form .form-actions .form-status {
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .contact-form .form-row {
+    grid-template-columns: 1fr;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 15px;
+  }
+}
+
+/* Tablet: slightly narrower form and tighter spacing */
+@media (max-width: 1024px) {
+  .contact-form {
+    max-width: 620px;
+    margin: 16px auto 0 auto;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    padding: 9px 10px;
+  }
+  .contact-form .form-row {
+    gap: 10px;
+  }
+  .btn-submit {
+    padding: 10px 14px;
+  }
+}
+
+/* Small tablets and large phones: compact and comfortable */
+@media (max-width: 768px) {
+  .contact-form {
+    max-width: 520px;
+    margin: 12px auto 0 auto;
+    padding: 0 18px;
+  }
+  .contact-form label {
+    font-size: 14px;
+  }
+  .contact-subtext {
+    font-size: clamp(16px, 3.2vw, 20px);
+    padding: 0 12px;
+  }
+  .contact-form .form-row {
+    gap: 10px;
+  }
+}
+
+/* Phones: tighter and full-bleed friendly */
+@media (max-width: 480px) {
+  .contact-form {
+    max-width: 420px;
+    margin: 10px auto 8px auto;
+    padding: 0 12px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+  .btn-submit {
+    padding: 10px 12px;
+  }
+  .contact-section {
+    padding: 40px 0 48px;
+  }
+  /* Reduce vertical spacing between form rows on small phones */
+  .contact-form .form-row {
+    margin-bottom: 16px;
+  }
+  /* Reduce name field top/bottom spacing on phones */
+  #cf-name {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-submit {
+    transition: none !important;
+  }
+}

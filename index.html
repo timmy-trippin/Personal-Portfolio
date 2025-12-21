@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jay Neil Pagalunan - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" href="images/name logo.png" type="image/png" />
+  </head>
+  <body id="top">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">
+        <img class="logo-img" src="images/name logo.png" alt="Site logo" />
+        <img
+          class="logo-img logo-img--white"
+          src="images/name logo-white.png"
+          alt="Site logo (white)"
+        />
+      </div>
+      <div class="nav-links">
+        <a href="#about">About me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Portfolio</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact" class="contact-btn">CONTACT ME</a>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-background" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="hero-left">
+          <p class="greeting">Hi, I am</p>
+          <h1 class="name">Jay Neil Pagalunan</h1>
+          <p class="title">
+            <span class="typewriter">Website Developer</span>
+          </p>
+          <div class="social-icons">
+            <a aria-label="Email" class="social-link mail" tabindex="0">
+              <i class="fas fa-envelope"></i>
+              <span class="social-tooltip below"
+                >pagalunanjayneil@gmail.com</span
+              >
+            </a>
+            <a href="https://github.com/timmy-trippin" aria-label="GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/jayneil-pagalunan-19a943369/?originalSubdomain=ph"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+          <div class="cta-row">
+            <!-- Download CV moved to "About Me" section's button -->
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="profile-image">
+            <img src="images/NEW IMAGE.png" alt="Jay Neil Pagalunan" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="it-berries">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          Information Technology student with experience in web development and
+          data encoding, building responsive websites and interfaces using
+          multiple programming languages, WordPress, and basic SEO knowledge.
+          Enjoys working on UI/UX and visual design and is also skilled in
+          creative editing tasks such as photo and video editing with Canva and
+          Capcut. Previously worked as a data encoder, carefully recording and
+          checking financial data from receipts in spreadsheets, building strong
+          attention to detail, respect for confidentiality, and confidence
+          working with data for analytics-focused roles.
+        </p>
+        <a
+          class="read-more-btn"
+          href="/files/Jay_Neil_Pagalunan_CV.pdf"
+          download
+          >Download CV</a
+        >
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+      <div class="container">
+        <div class="skills-title">SKILLS</div>
+
+        <h3 class="skills-subhead">USING NOW:</h3>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <img src="images/html logo.png" alt="HTML5" />
+            <div class="skill-label">HTML5</div>
+          </div>
+          <div class="skill-item">
+            <img src="images/css logo.png" alt="CSS3" />
+            <div class="skill-label">CSS3</div>
+          </div>
+          <div class="skill-item">
+            <img src="images/js logo.png" alt="JavaScript" />
+            <div class="skill-label">JavaScript</div>
+          </div>
+          <div class="skill-item">
+            <img src="images/php logo.png" alt="PHP" />
+            <div class="skill-label">PHP</div>
+          </div>
+          <div class="skill-item">
+            <img src="images/elementor logo.png" alt="Elementor" />
+            <div class="skill-label">Elementor</div>
+          </div>
+          <div class="skill-item">
+            <img src="images/python logo.png" alt="Python" />
+            <div class="skill-label">Python</div>
+          </div>
+          <div class="skill-item">
+            <img src="images/ms excel logo.png" alt="Excel" />
+            <div class="skill-label">Excel</div>
+          </div>
+          <div class="skill-item">
+            <img src="images/wordpress logo.png" alt="WordPress" />
+            <div class="skill-label">WordPress</div>
+          </div>
+        </div>
+
+        <h3 class="skills-subhead">LEARNING:</h3>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <img src="images/sql logo.png" alt="MySQL / SQL" />
+            <div class="skill-label">MySQL</div>
+          </div>
+          <div class="skill-item">
+            <img src="images/laravel logo.png" alt="Laravel" />
+            <div class="skill-label">Laravel</div>
+          </div>
+          <div class="skill-item">
+            <img src="images/nodejs.png" alt="Node.js" />
+            <div class="skill-label">NodeJS</div>
+          </div>
+          <div class="skill-item">
+            <img src="images/github logo.png" alt="Git / GitHub" />
+            <div class="skill-label">Git</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section Banner (keeps boxed title) -->
+    <section class="it-berries projects-section">
+      <div class="container">
+        <div class="skills-title skills-title--inverted">PORTFOLIO</div>
+      </div>
+    </section>
+
+    <!-- Projects Gallery (placed below banner so it uses global hero background) -->
+    <section id="projects" class="projects-gallery">
+      <div class="container">
+        <div class="projects-controls">
+          <div class="tabs-wrap">
+            <nav class="projects-tabs">
+              <button class="tab active" data-filter="all">All</button>
+              <button class="tab" data-filter="online">Online</button>
+              <button class="tab" data-filter="github">GitHub</button>
+            </nav>
+          </div>
+        </div>
+
+        <div class="projects-grid" aria-live="polite">
+          <!-- use actual image files in images/ -->
+          <div
+            class="project-item"
+            data-category="online"
+            data-title="Seven Café WordPress site"
+            data-desc=""
+            data-bullets="Built a multi‑page WordPress + Elementor website for a café that previously relied only on a Facebook page, giving it a dedicated online presence.||Implemented on‑page SEO and performance optimizations (titles, meta descriptions, headings, image compression, caching) to improve search visibility and loading speed."
+            data-tags="WordPress,Elementor,Yoast SEO"
+            data-demo="https://sevencafe.wuaze.com/"
+          >
+            <button class="project-thumb" aria-label="Open project">
+              <img src="images/project1.jpg" alt="Seven Café WordPress site" />
+              <span class="project-meta">Seven Café WordPress site</span>
+            </button>
+            <div class="project-type">Online</div>
+          </div>
+
+          <div
+            class="project-item"
+            data-category="github"
+            data-title="Ecological: Python Calorie Intake and Health Analyzer"
+            data-bullets="Developed EcologiCal, a Python web application that lets users log daily food intake and view calories, macronutrients, and estimated environmental impact (carbon footprint and water usage) over time.||Designed a relational database of food items with nutritional and ecological attributes, and implemented CRUD interfaces plus daily food logs accessible via a browser.||Integrated data visualization and K‑Means clustering in Python to highlight dietary trends and group foods into patterns (e.g., low‑impact vs high‑impact), helping users make more informed choices."
+            data-tags="HTML,CSS,JS,Python,VScode,Github"
+            data-images="image/Ecological-1.jpg, image/Ecological-2.jpg"
+            data-demo="https://github.com/timmy-trippin/EcologiCal"
+          >
+            <button class="project-thumb" aria-label="Open project">
+              <img
+                src="image/Ecological-1.jpg"
+                alt="Ecological: Python Calorie Intake and Health Analyzer"
+              />
+              <span class="project-meta"
+                >Ecological: Python Calorie Intake and Health Analyzer</span
+              >
+            </button>
+            <div class="project-type">GitHub</div>
+          </div>
+
+          <div
+            class="project-item"
+            data-category="online"
+            data-title="Let There Be Art: E-Commerce Website"
+            data-bullets="Designed and built an online store for art materials, allowing customers to browse products, manage a cart, and place orders through a responsive web interface.||Implemented backend logic in PHP connected to a database and external APIs to handle inventory updates, order processing, and (optional) payment or shipping integrations.||Added a basic loyalty program and admin dashboards with sales and customer analytics (top products, order history, repeat customers)"
+            data-tags="HTML,CSS,JS,PHP,MySQL,JSON,XML,YAML,VScode"
+            data-images="image/let-there-be-art-1.jpg, image/let-there-be-art-2.jpg"
+            data-demo="https://panelisdefended.gamer.gd/"
+          >
+            <button class="project-thumb" aria-label="Open project">
+              <img
+                src="image/let-there-be-art-1.jpg"
+                alt="Let There Be Art: E-Commerce Website"
+              />
+              <span class="project-meta"
+                >Let There Be Art: E-Commerce Website</span
+              >
+            </button>
+            <div class="project-type">Online</div>
+          </div>
+
+          <div
+            class="project-item"
+            data-category="github"
+            data-title="Student Performance Analytics"
+            data-bullets="Uses a dataset of 1,100 students to explore how different habits and factors (study time, attendance, etc.) relate to academic performance.||Performs data cleaning, visualization, correlation analysis, and trains a Random Forest model to estimate which factors matter most.||Provides an interactive dashboard (with Shiny + shinydashboard + plotly + DT) so users can explore the data, see feature importance, and test manual predictions."
+            data-tags="R,VScode,Github"
+            data-images="image/Analytics Dashboard-1.jpg, image/Analytics Dashboard-2.png"
+            data-demo="https://github.com/timmy-trippin/Performance-Analytics-Students-"
+          >
+            <button class="project-thumb" aria-label="Open project">
+              <img
+                src="image/Analytics Dashboard-1.jpg"
+                alt="Student Performance Analytics"
+              />
+              <span class="project-meta">Student Performance Analytics</span>
+            </button>
+            <div class="project-type">GitHub</div>
+          </div>
+
+          <!-- Removed Project 5 & 6 to keep the gallery at 2x2 on desktop -->
+        </div>
+
+        <div class="more-wrap">
+          <div class="projects-more-row">
+            <button class="btn-more">More</button>
+          </div>
+        </div>
+
+        <!-- viewer: image-only centered overlay -->
+        <div class="project-viewer" aria-hidden="true">
+          <div class="viewer-inner">
+            <button class="viewer-close" aria-label="Close">×</button>
+            <div class="viewer-media">
+              <div class="viewer-media-inner">
+                <button
+                  class="viewer-nav viewer-nav--prev"
+                  aria-label="Previous image"
+                >
+                  ‹
+                </button>
+                <img src="" alt="" />
+                <button
+                  class="viewer-nav viewer-nav--next"
+                  aria-label="Next image"
+                >
+                  ›
+                </button>
+              </div>
+            </div>
+            <div class="viewer-info">
+              <h3 class="viewer-title"></h3>
+              <div class="viewer-desc">
+                <ul class="viewer-bullets" aria-live="polite"></ul>
+              </div>
+              <div class="viewer-tags" aria-hidden="false"></div>
+              <a
+                class="viewer-demo btn-demo"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Open Project</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements & Certifications Section -->
+    <section id="achievements" class="achievements-section">
+      <div class="container">
+        <div class="achievements-title achievements-title--hero fade-down">
+          ACHIEVEMENTS
+        </div>
+
+        <div class="achievements-wrapper" data-name="achievements">
+          <div class="achievements-grid fade-right">
+            <div class="achievement-card" data-title="1st Year VPAA Lister">
+              <div class="card-media">
+                <img
+                  src="img/1st Year VPAA Lister-1.jpg"
+                  alt="1st Year VPAA Lister"
+                />
+              </div>
+              <div class="card-body"></div>
+            </div>
+            <div class="achievement-card" data-title="2nd Year Dean's Lister">
+              <div class="card-media">
+                <img
+                  src="img/2nd Year Dean's Lister-1.jpg"
+                  alt="2nd Year Dean's Lister"
+                />
+              </div>
+              <div class="card-body"></div>
+            </div>
+            <div class="achievement-card" data-title="3rd Year Dean's Lister">
+              <div class="card-media">
+                <img
+                  src="img/3rd Year Dean's Lister-1.jpg"
+                  alt="3rd Year Dean's Lister"
+                />
+              </div>
+              <div class="card-body"></div>
+            </div>
+            <!-- fourth achievement intentionally removed (only 3 available) -->
+          </div>
+
+          <button class="achieve-btn left-btn" aria-label="Previous">‹</button>
+          <button class="achieve-btn right-btn" aria-label="Next">›</button>
+        </div>
+
+        <div
+          class="achievements-wrapper certs-wrapper"
+          data-name="certifications"
+        >
+          <div class="achievements-grid fade-left">
+            <div class="achievement-card" data-title="Oracle E-Cert 1">
+              <div class="card-media">
+                <img src="img/Oracle-Ecert1-1.jpg" alt="Oracle E-Cert 1" />
+              </div>
+              <div class="card-body"></div>
+            </div>
+            <div class="achievement-card" data-title="Oracle E-Cert 2">
+              <div class="card-media">
+                <img src="img/Oracle=Ecert2-1.jpg" alt="Oracle E-Cert 2" />
+              </div>
+              <div class="card-body"></div>
+            </div>
+            <div class="achievement-card" data-title="Data Analytics Cert">
+              <div class="card-media">
+                <img
+                  src="img/PAGALUNAN EROVOUTIKA CERT DATA ANALYTICS-1.jpg"
+                  alt="Data Analytics Cert"
+                />
+              </div>
+              <div class="card-body"></div>
+            </div>
+            <div class="achievement-card" data-title="Python Cert">
+              <div class="card-media">
+                <img
+                  src="img/PAGALUNAN EROVOUTIKA CERT PYTHON-1.jpg"
+                  alt="Python Cert"
+                />
+              </div>
+              <div class="card-body"></div>
+            </div>
+            <div class="achievement-card" data-title="JDSAAP Cert">
+              <div class="card-media">
+                <img src="img/Pagalunan JDSAAP CERT.png" alt="JDSAAP Cert" />
+              </div>
+              <div class="card-body"></div>
+            </div>
+            <div class="achievement-card" data-title="CTI Cert">
+              <div class="card-media">
+                <img src="img/PAGALUNAN CTI CERT.png" alt="CTI Cert" />
+              </div>
+              <div class="card-body"></div>
+            </div>
+          </div>
+
+          <button class="achieve-btn left-btn" aria-label="Previous">‹</button>
+          <button class="achieve-btn right-btn" aria-label="Next">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact hero title (boxed style) -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="achievements-title achievements-title--hero fade-down">
+          CONTACT
+        </div>
+        <p class="contact-subtext fade-left">Feel free to send me a message</p>
+        <!-- Contact form: change the form `action` to control where messages are sent -->
+        <form
+          id="contact-form"
+          class="contact-form fade-right"
+          action="https://script.google.com/macros/s/YOUR_WEB_APP_ID/exec"
+          method="POST"
+          data-endpoint="/contact"
+        >
+          <!-- Honeypot field (hidden) to deter spam bots. Leave name 'hp' so Apps Script can ignore if filled. -->
+          <input
+            type="text"
+            name="hp"
+            class="hp-field"
+            tabindex="-1"
+            autocomplete="off"
+            style="position: absolute; left: -9999px; opacity: 0"
+            aria-hidden="true"
+          />
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-name" class="sr-only">Name</label>
+              <input
+                id="cf-name"
+                name="name"
+                type="text"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="cf-email" class="sr-only">Email</label>
+              <input
+                id="cf-email"
+                name="email"
+                type="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group full">
+              <label for="cf-subject" class="sr-only">Subject</label>
+              <input
+                id="cf-subject"
+                name="subject"
+                type="text"
+                placeholder="Enter your subject"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group full">
+              <label for="cf-message" class="sr-only">Message</label>
+              <textarea
+                id="cf-message"
+                name="message"
+                rows="6"
+                placeholder="Enter your message"
+                required
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">Send Message</button>
+            <div class="form-status" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Certificate/Achievement Viewer -->
+    <div class="cert-viewer" aria-hidden="true">
+      <div class="cert-viewer-overlay"></div>
+      <div class="cert-viewer-container">
+        <button class="cert-viewer-close" aria-label="Close">×</button>
+        <div class="cert-viewer-content">
+          <img src="" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <a href="#top" class="back-to-top">↑ BACK TO TOP</a>
+        </div>
+
+        <div class="footer-social" aria-label="Social links">
+          <a
+            href="https://www.facebook.com/jayneil.pagalunan"
+            aria-label="Facebook"
+            class="social-link"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/jayneil-pagalunan-19a943369/?originalSubdomain=ph"
+            aria-label="LinkedIn"
+            class="social-link"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a aria-label="Phone" class="social-link phone" tabindex="0">
+            <i class="fas fa-phone"></i>
+            <span class="phone-tooltip">+63 919 876 6508</span>
+          </a>
+          <a aria-label="Email" class="social-link mail" tabindex="0">
+            <i class="fas fa-envelope"></i>
+            <span class="mail-tooltip">pagalunanjayneil@gmail.com</span>
+          </a>
+        </div>
+
+        <div class="footer-copy">
+          ©2025 Jay Neil Pagalunan. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var btn = document.querySelector(".back-to-top");
+        if (btn) {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,913 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  color: #000;
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 60px;
+  background: transparent;
+  z-index: 1000;
+  transition: background 0.5s ease;
+}
+
+.navbar > * {
+  flex: 1;
+}
+
+.navbar .logo {
+  text-align: left;
+  margin-left: 10%; /* TWEAK THIS: Adjust logo position (positive = right, negative = left) */
+}
+
+.navbar .nav-links {
+  justify-content: center;
+}
+
+.navbar .hamburger {
+  margin-left: auto;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 2px;
+  z-index: 1001;
+}
+
+.navbar .logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .navbar .logo img {
+    height: 52px;
+  }
+}
+
+.navbar.scrolled .logo {
+  color: #fff;
+}
+
+/* Toggle nav logo images: show default, hide white version until scrolled */
+.navbar .logo .logo-img--white {
+  display: none;
+}
+.navbar.scrolled .logo .logo-img {
+  display: none;
+}
+.navbar.scrolled .logo .logo-img--white {
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.navbar.scrolled .nav-links a {
+  color: #fff;
+}
+
+.nav-links a:hover {
+  color: #38a793;
+}
+
+/* Animations */
+@keyframes navFade {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes socialFadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes profileFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes profileBounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCaret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Nav cascade: only run after page load */
+.is-loaded .nav-links a {
+  opacity: 0;
+  transform: translateY(-6px);
+  animation: navFade 420ms cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+.is-loaded .nav-links a:nth-child(1) {
+  animation-delay: 0.12s;
+}
+.is-loaded .nav-links a:nth-child(2) {
+  animation-delay: 0.28s;
+}
+.is-loaded .nav-links a:nth-child(3) {
+  animation-delay: 0.44s;
+}
+.is-loaded .nav-links a:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+/* Social icons: staggered fade-right */
+.social-icons a {
+  opacity: 0;
+  transform: translateX(-10px);
+  animation: socialFadeRight 520ms ease forwards;
+}
+.social-icons a:nth-child(1) {
+  animation-delay: 0.8s;
+}
+.social-icons a:nth-child(2) {
+  animation-delay: 0.95s;
+}
+.social-icons a:nth-child(3) {
+  animation-delay: 1.1s;
+}
+
+/* Profile image fade then slow bounce */
+.profile-image {
+  opacity: 0;
+  animation: profileFade 1000ms ease-out forwards,
+    profileBounce 2.4s ease-in-out 1.4s infinite;
+}
+
+/* Typewriter effect on title */
+.title .typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.12em solid #38a793;
+  width: 0;
+  animation: typewriter 4.6s steps(24, end) infinite,
+    blinkCaret 0.75s step-end infinite;
+}
+
+/* Download CV button */
+.cta-row {
+  margin-top: 18px;
+}
+
+.contact-btn {
+  background: #fff;
+  color: #000 !important;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: 2px solid #000;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #38a793;
+  border-color: #38a793;
+  color: #fff !important;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #000;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+.navbar.scrolled .hamburger span {
+  background: #fff;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff;
+}
+
+.hero-background {
+  /* Full-bleed decorative background shown behind the hero content on
+     desktop & tablet. Hidden on small phones to save space and improve
+     legibility. */
+  /* Make the decorative background fixed to the viewport so it doesn't
+    move when the user scrolls. It remains behind content via z-index. */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none; /* let clicks pass through */
+  /* Use the exact filename (spaces allowed inside quoted URL) */
+  background-image: url("../images/background for web.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 1; /* subtle by default, tweak as needed */
+  opacity: 1; /* subtle by default, tweak as needed */
+  /* Avoid animating transform so the background remains visually stable
+     while scrolling. Keep opacity transition for subtle fades. */
+  transform: none;
+  transition: opacity 360ms ease;
+  display: block;
+}
+
+.hero-content {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  padding: 120px 60px 60px; /* offset fixed navbar */
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: stretch;
+  /* responsive gap between text and image; min 40px, grows with viewport, max 80px */
+  gap: clamp(40px, 6vw, 80px);
+  z-index: 1;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 420px;
+  max-width: 640px;
+}
+
+.greeting {
+  font-size: clamp(32px, 1.8vw, 22px);
+  color: #000;
+  margin: 0 0 clamp(30px, 3vw, 40px) 0;
+  font-weight: 400;
+}
+
+.name {
+  font-size: clamp(40px, 7vw, 90px);
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 clamp(18px, 2.5vw, 35px) 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.title {
+  font-size: clamp(24px, 1.8vw, 22px);
+  color: #38a793;
+  margin: 0 0 clamp(40px, 4vw, 50px) 0;
+  font-weight: 600;
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+}
+
+.social-icons a {
+  width: 54px;
+  height: 54px;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  color: #000;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  background: #38a793;
+  border-color: #38a793;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Header mail tooltip shown below the icon */
+.social-icons .social-link.mail {
+  position: relative;
+}
+.social-icons .social-link.mail .social-tooltip {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: #fff;
+  color: #000;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  font-size: 13px;
+  z-index: 1002;
+}
+.social-icons .social-link.mail:hover .social-tooltip,
+.social-icons .social-link.mail:focus .social-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.hero-right {
+  position: relative;
+  display: grid;
+  align-items: end;
+}
+
+.profile-image {
+  position: relative;
+  z-index: 1;
+  align-self: end;
+  justify-self: end;
+  width: clamp(220px, 44vw, 560px);
+  max-width: 100%;
+}
+
+.profile-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* IT Berries Section */
+.it-berries {
+  background: #000;
+  padding: 80px 60px;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.it-berries h2 {
+  font-size: 48px;
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.it-berries p {
+  color: #ccc;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.read-more-btn {
+  background: transparent;
+  color: #fff;
+  padding: 15px 40px;
+  border: 2px solid #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background: #38a793;
+  border-color: #38a793;
+  transform: translateX(10px);
+}
+
+/* Skills Section */
+.skills-section {
+  /* Use the global hero background (fixed) — do not add another background here */
+  background: transparent;
+  padding: 80px 20px;
+  margin-top: 36px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.skills-title {
+  /* Keep boxed title for SKILLS (do not remove the box) */
+  border: 3px solid #000;
+  padding: 12px 36px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin: 0 auto 30px;
+  text-align: center;
+  width: max-content;
+  color: #000;
+  background: #fff;
+  position: relative;
+  z-index: 3;
+}
+.skills-subhead {
+  margin-top: 60px;
+  margin-bottom: 50px;
+  font-size: 14px;
+  color: #222;
+  letter-spacing: 2px;
+  /* Left-align the subheads within the centered container */
+  text-align: left;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 32px 28px;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 18px;
+}
+.skill-item img {
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+  display: block;
+}
+.skill-label {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+  .skills-section {
+    padding: 60px 18px;
+  }
+  .skill-item img {
+    width: 72px;
+    height: 72px;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section {
+    padding: 40px 12px;
+  }
+  /* Ensure at least 3 items are visible on narrow phones by keeping the min column width small */
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .skill-item img {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* Force 3 columns for most phone sizes to avoid 4-column layout on narrow screens */
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 20px 40px;
+    justify-content: space-between; /* keep logo left, links centered, contact/hamburger right */
+  }
+
+  .navbar > * {
+    flex: initial; /* children size naturally on tablet */
+  }
+
+  .navbar .logo {
+    margin-left: 0; /* reset desktop offset for tablet */
+  }
+
+  .nav-links {
+    gap: 23px; /* slightly tighter for tablet */
+    justify-content: center;
+  }
+
+  .hero-content {
+    padding: 110px 40px 50px;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(30px, 5vw, 50px);
+  }
+
+  .profile-image {
+    width: clamp(200px, 42vw, 480px);
+  }
+
+  /* Shrink the background slightly on tablet so it reads smaller */
+  .hero-background {
+    /* Use a scaled background image on tablet but do not animate it. */
+    transform: scale(0.86);
+    opacity: 0.14;
+  }
+}
+
+/* Medium screens fix: reset navbar child flex and logo offset for medium widths
+   This targets medium / tablet-size viewports without affecting desktop (>1280px)
+   or small/mobile breakpoints (existing rules remain unchanged). */
+@media (max-width: 1280px) and (min-width: 769px) {
+  .navbar {
+    padding: 20px 48px; /* slightly reduced side padding on medium screens */
+    justify-content: space-between; /* make layout natural */
+  }
+
+  /* Let children size naturally (logo, links, hamburger) so nav aligns correctly */
+  .navbar > * {
+    flex: initial;
+  }
+
+  /* Remove desktop-only logo offset so nav links truly center */
+  .navbar .logo {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  /* Keep nav links centered horizontally in the remaining space */
+  .nav-links {
+    justify-content: center;
+    gap: 28px; /* slightly tighter spacing on medium */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 30px;
+    justify-content: space-between; /* ensure hamburger sits at right on small screens */
+  }
+
+  .navbar > * {
+    flex: initial; /* disable equal flex so children size naturally on mobile */
+  }
+
+  .navbar .logo {
+    margin-left: 0; /* reset desktop tweak for mobile */
+  }
+
+  .hamburger {
+    margin-left: 0; /* ensure hamburger is on the right */
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    background: rgba(0, 0, 0, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    color: #fff !important;
+    font-size: 20px;
+  }
+
+  .contact-btn {
+    background: #38a793;
+    border-color: #38a793;
+    color: #fff !important;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 100px 30px 50px;
+    gap: clamp(20px, 3vw, 30px);
+    align-items: center;
+  }
+
+  .hero-left {
+    margin-bottom: 0;
+  }
+
+  .social-icons {
+    justify-content: center;
+    margin-bottom: clamp(20px, 4vw, 30px);
+  }
+
+  .hero-right {
+    justify-content: center;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .profile-image {
+    width: clamp(200px, 65vw, 400px);
+  }
+
+  .it-berries {
+    padding: 60px 30px;
+  }
+
+  .it-berries h2 {
+    font-size: 36px;
+  }
+
+  /* Hide the decorative background on smaller phones */
+  .hero-background {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 24px;
+  }
+
+  .social-icons a {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .profile-image {
+    width: clamp(180px, 75vw, 320px);
+  }
+
+  .it-berries h2 {
+    font-size: 28px;
+  }
+
+  .it-berries p {
+    font-size: 14px;
+  }
+}
+
+/* Site footer styles */
+.site-footer {
+  background: #111;
+  color: #fff;
+  padding: 36px 0 30px;
+  font-size: 14px;
+  position: relative; /* ensure footer sits above fixed decorative backgrounds */
+  z-index: 60;
+  margin-top: 40px; /* add breathing room from previous section */
+}
+.site-footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.site-footer .footer-top {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 14px;
+}
+.site-footer .back-to-top {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  display: inline-block; /* make margin apply reliably */
+  margin-bottom: 40px; /* ensure space below back-to-top so it doesn't overlap links */
+}
+.site-footer .footer-social {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px; /* give extra breathing room from the links above */
+}
+.site-footer .social-link {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 36px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.28s ease; /* smooth hover transition to match hero socials */
+  opacity: 0; /* start hidden for reveal-on-scroll cascade */
+  transform: translateX(-10px);
+}
+.site-footer .social-link i {
+  font-size: 16px;
+}
+.site-footer .social-link:hover,
+.site-footer .social-link:focus {
+  background: #38a793;
+  border-color: #38a793;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+.site-footer.in-view .social-link {
+  /* play the same socialFadeRight animation used in the hero but triggered when footer is in-view */
+  animation: socialFadeRight 520ms ease forwards;
+}
+.site-footer.in-view .footer-social .social-link:nth-child(1) {
+  animation-delay: 0.8s;
+}
+.site-footer.in-view .footer-social .social-link:nth-child(2) {
+  animation-delay: 0.95s;
+}
+.site-footer.in-view .footer-social .social-link:nth-child(3) {
+  animation-delay: 1.1s;
+}
+.site-footer.in-view .footer-social .social-link:nth-child(4) {
+  animation-delay: 1.25s;
+}
+.site-footer .footer-copy {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+}
+
+/* Phone tooltip for footer social link */
+.site-footer .social-link.phone {
+  position: relative;
+}
+.site-footer .social-link.phone .phone-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: #fff;
+  color: #000;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  font-size: 13px;
+  z-index: 1002;
+}
+.site-footer .social-link.phone:hover .phone-tooltip,
+.site-footer .social-link.phone:focus .phone-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Mail tooltip for footer social link */
+.site-footer .social-link.mail {
+  position: relative;
+}
+.site-footer .social-link.mail .mail-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: #fff;
+  color: #000;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  font-size: 13px;
+  z-index: 1002;
+}
+.site-footer .social-link.mail:hover .mail-tooltip,
+.site-footer .social-link.mail:focus .mail-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 28px 0 22px;
+  }
+  .site-footer .social-link {
+    width: 40px;
+    height: 36px;
+  }
+  .site-footer .footer-top {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 22px 0 18px;
+  }
+  .site-footer .social-link {
+    width: 36px;
+    height: 34px;
+    border-radius: 4px;
+  }
+  .site-footer .footer-top {
+    font-size: 11px;
+  }
+  .site-footer .footer-copy {
+    font-size: 12px;
+  }
+}
